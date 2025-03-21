@@ -1,0 +1,18 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "/Users/aidanjost/projects/solray/cmake-build-debug",
+	"dir-cur-src" : "/Users/aidanjost/projects/solray",
+	"dir-top-bld" : "/Users/aidanjost/projects/solray/cmake-build-debug",
+	"dir-top-src" : "/Users/aidanjost/projects/solray",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir"
+}
