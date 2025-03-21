@@ -153,6 +153,152 @@ namespace solray
             raylib["get_time"] = &GetTime;
 
 
+            raylib["swap_screen_buffer"] = &SwapScreenBuffer;
+            raylib["poll_input_events"] = &PollInputEvents;
+            raylib["wait_time"] = &WaitTime;
+
+            raylib["set_random_seed"] = &SetRandomSeed;
+            raylib["get_random_value"] = &GetRandomValue;
+            raylib["load_random_sequence"] = &LoadRandomSequence;
+            raylib["unload_random_sequence"] = &UnloadRandomSequence;
+
+            raylib["take_screenshot"] = &TakeScreenshot;
+            raylib["set_config_flags"] = &SetConfigFlags;
+            raylib["open_url"] = &OpenURL;
+
+            raylib["trace_log"] = &TraceLog;
+            raylib["set_trace_log_level"] = &SetTraceLogLevel;
+            raylib["mem_alloc"] = &MemAlloc;
+            raylib["mem_realloc"] = &MemRealloc;
+            raylib["mem_free"] = &MemFree;
+
+            raylib["set_trace_log_callback"] = &SetTraceLogCallback;
+            raylib["set_load_file_data_callback"] = &SetLoadFileDataCallback;
+            raylib["set_save_file_data_callback"] = &SetSaveFileDataCallback;
+            raylib["set_load_file_text_callback"] = &SetLoadFileTextCallback;
+            raylib["set_save_file_text_callback"] = &SetSaveFileTextCallback;
+
+            raylib["load_file_data"] = &LoadFileData;
+            raylib["unload_file_data"] = &UnloadFileData;
+            raylib["save_file_data"] = &SaveFileData;
+            raylib["export_data_as_code"] = &ExportDataAsCode;
+            raylib["load_file_text"] = &LoadFileText;
+            raylib["unload_file_text"] = &UnloadFileText;
+            raylib["save_file_text"] = &SaveFileText;
+
+            raylib["file_exists"] = &FileExists;
+            raylib["directory_exists"] = &DirectoryExists;
+            raylib["is_file_extension"] = &IsFileExtension;
+            raylib["get_file_length"] = &GetFileLength;
+            raylib["get_file_extension"] = &GetFileExtension;
+            raylib["get_file_name"] = &GetFileName;
+            raylib["get_file_name_without_ext"] = &GetFileNameWithoutExt;
+            raylib["get_directory_path"] = &GetDirectoryPath;
+            raylib["get_prev_directory_path"] = &GetPrevDirectoryPath;
+            raylib["get_working_directory"] = &GetWorkingDirectory;
+            raylib["get_application_directory"] = &GetApplicationDirectory;
+            raylib["make_directory"] = &MakeDirectory;
+            raylib["change_directory"] = &ChangeDirectory;
+            raylib["is_path_file"] = &IsPathFile;
+            raylib["is_file_name_valid"] = &IsFileNameValid;
+            raylib["load_directory_files"] = &LoadDirectoryFiles;
+            raylib["load_directory_files_ex"] = &LoadDirectoryFilesEx;
+            raylib["unload_directory_files"] = &UnloadDirectoryFiles;
+            raylib["is_file_dropped"] = &IsFileDropped;
+            raylib["load_dropped_files"] = &LoadDroppedFiles;
+            raylib["unload_dropped_files"] = &UnloadDroppedFiles;
+            raylib["get_file_mod_time"] = &GetFileModTime;
+
+            raylib["compress_data"] = &CompressData;
+            raylib["decompress_data"] = &DecompressData;
+            raylib["encode_data_base64"] = &EncodeDataBase64;
+            raylib["decode_data_base64"] = &DecodeDataBase64;
+            raylib["compute_crc32"] = &ComputeCRC32;
+            raylib["compute_md5"] = &ComputeMD5;
+            raylib["compute_sha1"] = &ComputeSHA1;
+
+            raylib["load_automation_event_list"] = &LoadAutomationEventList;
+            raylib["unload_automation_event_list"] = &UnloadAutomationEventList;
+            raylib["export_automation_event_list"] = &ExportAutomationEventList;
+            raylib["set_automation_event_list"] = &SetAutomationEventList;
+            raylib["set_automation_event_base_frame"] = &SetAutomationEventBaseFrame;
+            raylib["start_automation_event_recording"] = &StartAutomationEventRecording;
+            raylib["stop_automation_event_recording"] = &StopAutomationEventRecording;
+            raylib["play_automation_event"] = &PlayAutomationEvent;
+
+            raylib["is_key_pressed"] = &IsKeyPressed;
+            raylib["is_key_down"] = &IsKeyDown;
+            raylib["is_key_released"] = &IsKeyReleased;
+            raylib["is_key_up"] = &IsKeyUp;
+            raylib["get_key_pressed"] = &GetKeyPressed;
+            raylib["get_char_pressed"] = &GetCharPressed;
+            raylib["set_exit_key"] = &SetExitKey;
+            raylib["is_key_pressed_repeat"] = &IsKeyPressedRepeat;
+
+            raylib["is_gamepad_available"] = &IsGamepadAvailable;
+            raylib["get_gamepad_name"] = &GetGamepadName;
+            raylib["is_gamepad_button_pressed"] = &IsGamepadButtonPressed;
+            raylib["is_gamepad_button_down"] = &IsGamepadButtonDown;
+            raylib["is_gamepad_button_released"] = &IsGamepadButtonReleased;
+            raylib["is_gamepad_button_up"] = &IsGamepadButtonUp;
+            raylib["get_gamepad_button_pressed"] = &GetGamepadButtonPressed;
+            raylib["get_gamepad_axis_count"] = &GetGamepadAxisCount;
+            raylib["get_gamepad_axis_movement"] = &GetGamepadAxisMovement;
+            raylib["set_gamepad_mappings"] = &SetGamepadMappings;
+            raylib["set_gamepad_vibration"] = &SetGamepadVibration;
+
+            raylib["is_mouse_button_pressed"] = &IsMouseButtonPressed;
+            raylib["is_mouse_button_down"] = &IsMouseButtonDown;
+            raylib["is_mouse_button_released"] = &IsMouseButtonReleased;
+            raylib["is_mouse_button_up"] = &IsMouseButtonUp;
+            raylib["get_mouse_x"] = &GetMouseX;
+            raylib["get_mouse_y"] = &GetMouseY;
+            raylib["get_mouse_position"] = &GetMousePosition;
+            raylib["get_mouse_delta"] = &GetMouseDelta;
+            raylib["set_mouse_position"] = &SetMousePosition;
+            raylib["set_mouse_offset"] = &SetMouseOffset;
+            raylib["set_mouse_scale"] = &SetMouseScale;
+            raylib["get_mouse_wheel_move"] = &GetMouseWheelMove;
+            raylib["get_mouse_wheel_move_v"] = &GetMouseWheelMoveV;
+            raylib["set_mouse_cursor"] = &SetMouseCursor;
+
+            raylib["get_touch_x"] = &GetTouchX;
+            raylib["get_touch_y"] = &GetTouchY;
+            raylib["get_touch_position"] = &GetTouchPosition;
+            raylib["get_touch_point_id"] = &GetTouchPointId;
+            raylib["get_touch_point_count"] = &GetTouchPointCount;
+
+            raylib["set_gestures_enabled"] = &SetGesturesEnabled;
+            raylib["is_gesture_detected"] = &IsGestureDetected;
+            raylib["get_gesture_detected"] = &GetGestureDetected;
+            raylib["get_gesture_hold_duration"] = &GetGestureHoldDuration;
+            raylib["get_gesture_drag_vector"] = &GetGestureDragVector;
+            raylib["get_gesture_drag_angle"] = &GetGestureDragAngle;
+            raylib["get_gesture_pinch_vector"] = &GetGesturePinchVector;
+            raylib["get_gesture_pinch_angle"] = &GetGesturePinchAngle;
+
+            raylib["update_camera"] = &UpdateCamera;
+            raylib["update_camera_pro"] = &UpdateCameraPro;
+
+
+
+            raylib["set_shapes_texture"] = &SetShapesTexture;
+            raylib["get_shapes_texture"] = &GetShapesTexture;
+            raylib["get_shapes_texture_rectangle"] = &GetShapesTextureRectangle;
+
+            raylib["draw_pixel"] = &DrawPixel;
+            raylib["draw_pixel_v"] = &DrawPixelV;
+            raylib["draw_line"] = &DrawLine;
+            raylib["draw_line_v"] = &DrawLineV;
+            raylib["draw_line_ex"] = &DrawLineEx;
+            raylib["draw_line_strip"] = &DrawLineStrip;
+            raylib["draw_line_bezier"] = &DrawLineBezier;
+            raylib["draw_circle"] = &DrawCircle;
+            raylib["draw_circle_sector"] = &DrawCircleSector;
+            raylib["draw_circle_sector_lines"] = &DrawCircleSectorLines;
+            raylib["draw_circle_gradient"] = &DrawCircleGradient;
+            raylib["draw_circle_v"] = &DrawCircleV;
+
 
 
 
