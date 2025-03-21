@@ -14,7 +14,7 @@ include(cmake/fetch_raylib.cmake)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(solray SHARED src/library.cpp
+add_library(solray SHARED
         src/solray.cpp)
 
 target_link_libraries(solray PRIVATE sol2 raylib)

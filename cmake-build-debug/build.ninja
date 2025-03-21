@@ -49,25 +49,6 @@ cmake_ninja_workdir = /Users/aidanjost/projects/solray/cmake-build-debug/
 
 build cmake_object_order_depends_target_solray: phony || cmake_object_order_depends_target_glfw cmake_object_order_depends_target_raylib
 
-build CMakeFiles/solray.dir/src/library.cpp.o.ddi: CXX_SCAN__solray_Debug /Users/aidanjost/projects/solray/src/library.cpp || cmake_object_order_depends_target_solray
-  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -Dsolray_EXPORTS
-  DEP_FILE = CMakeFiles/solray.dir/src/library.cpp.o.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/solray.dir/src/library.cpp.o.ddi
-  FLAGS = -I/opt/homebrew/opt/llvm/include -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics
-  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-src/include
-  OBJ_FILE = CMakeFiles/solray.dir/src/library.cpp.o
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles/solray.dir/src/library.cpp.o.ddi.i
-
-build CMakeFiles/solray.dir/src/library.cpp.o: CXX_COMPILER__solray_scanned_Debug /Users/aidanjost/projects/solray/src/library.cpp | CMakeFiles/solray.dir/src/library.cpp.o.modmap || cmake_object_order_depends_target_solray CMakeFiles/solray.dir/CXX.dd
-  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -Dsolray_EXPORTS
-  DEP_FILE = CMakeFiles/solray.dir/src/library.cpp.o.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles/solray.dir/src/library.cpp.o.modmap
-  FLAGS = -I/opt/homebrew/opt/llvm/include -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics
-  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-src/include
-  OBJECT_DIR = CMakeFiles/solray.dir
-  OBJECT_FILE_DIR = CMakeFiles/solray.dir/src
-  dyndep = CMakeFiles/solray.dir/CXX.dd
-
 build CMakeFiles/solray.dir/src/solray.cpp.o.ddi: CXX_SCAN__solray_Debug /Users/aidanjost/projects/solray/src/solray.cpp || cmake_object_order_depends_target_solray
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -Dsolray_EXPORTS
   DEP_FILE = CMakeFiles/solray.dir/src/solray.cpp.o.ddi.d
@@ -87,7 +68,7 @@ build CMakeFiles/solray.dir/src/solray.cpp.o: CXX_COMPILER__solray_scanned_Debug
   OBJECT_FILE_DIR = CMakeFiles/solray.dir/src
   dyndep = CMakeFiles/solray.dir/CXX.dd
 
-build CMakeFiles/solray.dir/CXX.dd | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXModules.json CMakeFiles/solray.dir/src/library.cpp.o.modmap CMakeFiles/solray.dir/src/solray.cpp.o.modmap: CXX_DYNDEP__solray_Debug CMakeFiles/solray.dir/src/library.cpp.o.ddi CMakeFiles/solray.dir/src/solray.cpp.o.ddi | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXDependInfo.json
+build CMakeFiles/solray.dir/CXX.dd | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXModules.json CMakeFiles/solray.dir/src/solray.cpp.o.modmap: CXX_DYNDEP__solray_Debug CMakeFiles/solray.dir/src/solray.cpp.o.ddi | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -97,7 +78,7 @@ build CMakeFiles/solray.dir/CXX.dd | /Users/aidanjost/projects/solray/cmake-buil
 #############################################
 # Link the shared library libsolray.dylib
 
-build libsolray.dylib: CXX_SHARED_LIBRARY_LINKER__solray_Debug CMakeFiles/solray.dir/src/library.cpp.o CMakeFiles/solray.dir/src/solray.cpp.o | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
+build libsolray.dylib: CXX_SHARED_LIBRARY_LINKER__solray_Debug CMakeFiles/solray.dir/src/solray.cpp.o | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -I/opt/homebrew/opt/llvm/include -g
