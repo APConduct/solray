@@ -43,6 +43,13 @@ namespace solray
                 "z", &Vector4::z,
                 "w", &Vector4::w);
 
+            raylib.new_usertype<Texture>("Texture",
+                sol::constructors<Texture()>(),
+                "id", &Texture::id,
+                "width", &Texture::width,
+                "height", &Texture::height,
+                "mipmaps", &Texture::mipmaps,
+                "format", &Texture::format);
 
             raylib["init_window"] = &InitWindow;
             raylib["close_window"] = &CloseWindow;
