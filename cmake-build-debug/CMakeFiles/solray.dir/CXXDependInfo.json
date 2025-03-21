@@ -11,7 +11,12 @@
 	"dir-top-src" : "/Users/aidanjost/projects/solray",
 	"exports" : [],
 	"forward-modules-from-target-dirs" : [],
-	"include-dirs" : [],
+	"include-dirs" : 
+	[
+		"_deps/raylib-src/src",
+		"_deps/raylib-src/src/external/glfw/include",
+		"_deps/sol2-src/include"
+	],
 	"language" : "CXX",
 	"linked-target-dirs" : [],
 	"module-dir" : "/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir"

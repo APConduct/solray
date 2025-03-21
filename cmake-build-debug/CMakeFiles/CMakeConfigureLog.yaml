@@ -453,3 +453,74 @@ events:
       LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.9)
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "cmake-build-debug/_deps/raylib-src/cmake/AddIfFlagCompiles.cmake:3 (CHECK_C_COMPILER_FLAG)"
+      - "cmake-build-debug/_deps/raylib-src/cmake/CompilerFlags.cmake:5 (add_if_flag_compiles)"
+      - "cmake-build-debug/_deps/raylib-src/CMakeLists.txt:34 (include)"
+    checks:
+      - "Performing Test COMPILER_HAS_THOSE_TOGGLES"
+    directories:
+      source: "/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-5oqW9G"
+      binary: "/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-5oqW9G"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7_1/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: "-I/opt/homebrew/opt/llvm/include"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/aidanjost/projects/solray/cmake;/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "COMPILER_HAS_THOSE_TOGGLES"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-5oqW9G'
+        
+        Run Build Command(s): /opt/homebrew/Cellar/ninja/1.12.1/bin/ninja -v cmTC_3bbf3
+        [1/2] /opt/homebrew/opt/llvm/bin/clang -DCOMPILER_HAS_THOSE_TOGGLES  -I/opt/homebrew/opt/llvm/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics   -Werror=pointer-arith -MD -MT CMakeFiles/cmTC_3bbf3.dir/src.c.o -MF CMakeFiles/cmTC_3bbf3.dir/src.c.o.d -o CMakeFiles/cmTC_3bbf3.dir/src.c.o -c /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-5oqW9G/src.c
+        [2/2] : && /opt/homebrew/opt/llvm/bin/clang -I/opt/homebrew/opt/llvm/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib CMakeFiles/cmTC_3bbf3.dir/src.c.o -o cmTC_3bbf3   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "cmake-build-debug/_deps/raylib-src/src/external/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qL2OIE"
+      binary: "/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qL2OIE"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7_1/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/aidanjost/projects/solray/cmake;/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/cmake;/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/CMake/modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qL2OIE'
+        
+        Run Build Command(s): /opt/homebrew/Cellar/ninja/1.12.1/bin/ninja -v cmTC_7b77f
+        [1/2] /opt/homebrew/opt/llvm/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include  -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_7b77f.dir/src.c.o -MF CMakeFiles/cmTC_7b77f.dir/src.c.o.d -o CMakeFiles/cmTC_7b77f.dir/src.c.o -c /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qL2OIE/src.c
+        [2/2] : && /opt/homebrew/opt/llvm/bin/clang -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib CMakeFiles/cmTC_7b77f.dir/src.c.o -o cmTC_7b77f   && :
+        
+      exitCode: 0
+...

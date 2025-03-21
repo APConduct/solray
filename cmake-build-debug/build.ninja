@@ -18,7 +18,7 @@
 #############################################
 # Minimal version of Ninja required by this file
 
-ninja_required_version = 1.5
+ninja_required_version = 1.8
 
 
 #############################################
@@ -47,26 +47,47 @@ cmake_ninja_workdir = /Users/aidanjost/projects/solray/cmake-build-debug/
 #############################################
 # Order-only phony target for solray
 
-build cmake_object_order_depends_target_solray: phony || .
+build cmake_object_order_depends_target_solray: phony || cmake_object_order_depends_target_glfw cmake_object_order_depends_target_raylib
 
-build CMakeFiles/solray.dir/library.cpp.o.ddi: CXX_SCAN__solray_Debug /Users/aidanjost/projects/solray/library.cpp || cmake_object_order_depends_target_solray
-  DEFINES = -Dsolray_EXPORTS
-  DEP_FILE = CMakeFiles/solray.dir/library.cpp.o.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/solray.dir/library.cpp.o.ddi
+build CMakeFiles/solray.dir/src/library.cpp.o.ddi: CXX_SCAN__solray_Debug /Users/aidanjost/projects/solray/src/library.cpp || cmake_object_order_depends_target_solray
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -Dsolray_EXPORTS
+  DEP_FILE = CMakeFiles/solray.dir/src/library.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/solray.dir/src/library.cpp.o.ddi
   FLAGS = -I/opt/homebrew/opt/llvm/include -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics
-  OBJ_FILE = CMakeFiles/solray.dir/library.cpp.o
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles/solray.dir/library.cpp.o.ddi.i
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-src/include
+  OBJ_FILE = CMakeFiles/solray.dir/src/library.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/solray.dir/src/library.cpp.o.ddi.i
 
-build CMakeFiles/solray.dir/library.cpp.o: CXX_COMPILER__solray_scanned_Debug /Users/aidanjost/projects/solray/library.cpp | CMakeFiles/solray.dir/library.cpp.o.modmap || cmake_object_order_depends_target_solray CMakeFiles/solray.dir/CXX.dd
-  DEFINES = -Dsolray_EXPORTS
-  DEP_FILE = CMakeFiles/solray.dir/library.cpp.o.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles/solray.dir/library.cpp.o.modmap
+build CMakeFiles/solray.dir/src/library.cpp.o: CXX_COMPILER__solray_scanned_Debug /Users/aidanjost/projects/solray/src/library.cpp | CMakeFiles/solray.dir/src/library.cpp.o.modmap || cmake_object_order_depends_target_solray CMakeFiles/solray.dir/CXX.dd
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -Dsolray_EXPORTS
+  DEP_FILE = CMakeFiles/solray.dir/src/library.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/solray.dir/src/library.cpp.o.modmap
   FLAGS = -I/opt/homebrew/opt/llvm/include -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-src/include
   OBJECT_DIR = CMakeFiles/solray.dir
-  OBJECT_FILE_DIR = CMakeFiles/solray.dir
+  OBJECT_FILE_DIR = CMakeFiles/solray.dir/src
   dyndep = CMakeFiles/solray.dir/CXX.dd
 
-build CMakeFiles/solray.dir/CXX.dd | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXModules.json CMakeFiles/solray.dir/library.cpp.o.modmap: CXX_DYNDEP__solray_Debug CMakeFiles/solray.dir/library.cpp.o.ddi | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXDependInfo.json
+build CMakeFiles/solray.dir/src/solray.cpp.o.ddi: CXX_SCAN__solray_Debug /Users/aidanjost/projects/solray/src/solray.cpp || cmake_object_order_depends_target_solray
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -Dsolray_EXPORTS
+  DEP_FILE = CMakeFiles/solray.dir/src/solray.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/solray.dir/src/solray.cpp.o.ddi
+  FLAGS = -I/opt/homebrew/opt/llvm/include -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-src/include
+  OBJ_FILE = CMakeFiles/solray.dir/src/solray.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/solray.dir/src/solray.cpp.o.ddi.i
+
+build CMakeFiles/solray.dir/src/solray.cpp.o: CXX_COMPILER__solray_scanned_Debug /Users/aidanjost/projects/solray/src/solray.cpp | CMakeFiles/solray.dir/src/solray.cpp.o.modmap || cmake_object_order_depends_target_solray CMakeFiles/solray.dir/CXX.dd
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -Dsolray_EXPORTS
+  DEP_FILE = CMakeFiles/solray.dir/src/solray.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/solray.dir/src/solray.cpp.o.modmap
+  FLAGS = -I/opt/homebrew/opt/llvm/include -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-src/include
+  OBJECT_DIR = CMakeFiles/solray.dir
+  OBJECT_FILE_DIR = CMakeFiles/solray.dir/src
+  dyndep = CMakeFiles/solray.dir/CXX.dd
+
+build CMakeFiles/solray.dir/CXX.dd | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXModules.json CMakeFiles/solray.dir/src/library.cpp.o.modmap CMakeFiles/solray.dir/src/solray.cpp.o.modmap: CXX_DYNDEP__solray_Debug CMakeFiles/solray.dir/src/library.cpp.o.ddi CMakeFiles/solray.dir/src/solray.cpp.o.ddi | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/solray.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -76,11 +97,12 @@ build CMakeFiles/solray.dir/CXX.dd | /Users/aidanjost/projects/solray/cmake-buil
 #############################################
 # Link the shared library libsolray.dylib
 
-build libsolray.dylib: CXX_SHARED_LIBRARY_LINKER__solray_Debug CMakeFiles/solray.dir/library.cpp.o
+build libsolray.dylib: CXX_SHARED_LIBRARY_LINKER__solray_Debug CMakeFiles/solray.dir/src/library.cpp.o CMakeFiles/solray.dir/src/solray.cpp.o | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -I/opt/homebrew/opt/llvm/include -g
   LINK_FLAGS = -L/opt/homebrew/opt/llvm/lib
+  LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -framework OpenGL  -framework Cocoa  -framework IOKit  -framework CoreFoundation
   OBJECT_DIR = CMakeFiles/solray.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -88,6 +110,30 @@ build libsolray.dylib: CXX_SHARED_LIBRARY_LINKER__solray_Debug CMakeFiles/solray
   SONAME_FLAG = -install_name
   TARGET_FILE = libsolray.dylib
   TARGET_PDB = solray.dylib.dbg
+
+
+#############################################
+# Utility command for package
+
+build CMakeFiles/package.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build package: phony CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackSourceConfig.cmake /Users/aidanjost/projects/solray/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build package_source: phony CMakeFiles/package_source.util
 
 
 #############################################
@@ -112,10 +158,1367 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/aidanjost/projects/solray/cmake/fetch_sol.cmake
+# =============================================================================
+
+
+#############################################
+# Utility command for Experimental
+
+build _deps/sol2-build/Experimental: phony _deps/sol2-build/CMakeFiles/Experimental
+
+
+#############################################
+# Utility command for Nightly
+
+build _deps/sol2-build/Nightly: phony _deps/sol2-build/CMakeFiles/Nightly
+
+
+#############################################
+# Utility command for Continuous
+
+build _deps/sol2-build/Continuous: phony _deps/sol2-build/CMakeFiles/Continuous
+
+
+#############################################
+# Utility command for NightlyMemoryCheck
+
+build _deps/sol2-build/NightlyMemoryCheck: phony _deps/sol2-build/CMakeFiles/NightlyMemoryCheck
+
+
+#############################################
+# Utility command for NightlyStart
+
+build _deps/sol2-build/NightlyStart: phony _deps/sol2-build/CMakeFiles/NightlyStart
+
+
+#############################################
+# Utility command for NightlyUpdate
+
+build _deps/sol2-build/NightlyUpdate: phony _deps/sol2-build/CMakeFiles/NightlyUpdate
+
+
+#############################################
+# Utility command for NightlyConfigure
+
+build _deps/sol2-build/NightlyConfigure: phony _deps/sol2-build/CMakeFiles/NightlyConfigure
+
+
+#############################################
+# Utility command for NightlyBuild
+
+build _deps/sol2-build/NightlyBuild: phony _deps/sol2-build/CMakeFiles/NightlyBuild
+
+
+#############################################
+# Utility command for NightlyTest
+
+build _deps/sol2-build/NightlyTest: phony _deps/sol2-build/CMakeFiles/NightlyTest
+
+
+#############################################
+# Utility command for NightlyCoverage
+
+build _deps/sol2-build/NightlyCoverage: phony _deps/sol2-build/CMakeFiles/NightlyCoverage
+
+
+#############################################
+# Utility command for NightlyMemCheck
+
+build _deps/sol2-build/NightlyMemCheck: phony _deps/sol2-build/CMakeFiles/NightlyMemCheck
+
+
+#############################################
+# Utility command for NightlySubmit
+
+build _deps/sol2-build/NightlySubmit: phony _deps/sol2-build/CMakeFiles/NightlySubmit
+
+
+#############################################
+# Utility command for ExperimentalStart
+
+build _deps/sol2-build/ExperimentalStart: phony _deps/sol2-build/CMakeFiles/ExperimentalStart
+
+
+#############################################
+# Utility command for ExperimentalUpdate
+
+build _deps/sol2-build/ExperimentalUpdate: phony _deps/sol2-build/CMakeFiles/ExperimentalUpdate
+
+
+#############################################
+# Utility command for ExperimentalConfigure
+
+build _deps/sol2-build/ExperimentalConfigure: phony _deps/sol2-build/CMakeFiles/ExperimentalConfigure
+
+
+#############################################
+# Utility command for ExperimentalBuild
+
+build _deps/sol2-build/ExperimentalBuild: phony _deps/sol2-build/CMakeFiles/ExperimentalBuild
+
+
+#############################################
+# Utility command for ExperimentalTest
+
+build _deps/sol2-build/ExperimentalTest: phony _deps/sol2-build/CMakeFiles/ExperimentalTest
+
+
+#############################################
+# Utility command for ExperimentalCoverage
+
+build _deps/sol2-build/ExperimentalCoverage: phony _deps/sol2-build/CMakeFiles/ExperimentalCoverage
+
+
+#############################################
+# Utility command for ExperimentalMemCheck
+
+build _deps/sol2-build/ExperimentalMemCheck: phony _deps/sol2-build/CMakeFiles/ExperimentalMemCheck
+
+
+#############################################
+# Utility command for ExperimentalSubmit
+
+build _deps/sol2-build/ExperimentalSubmit: phony _deps/sol2-build/CMakeFiles/ExperimentalSubmit
+
+
+#############################################
+# Utility command for ContinuousStart
+
+build _deps/sol2-build/ContinuousStart: phony _deps/sol2-build/CMakeFiles/ContinuousStart
+
+
+#############################################
+# Utility command for ContinuousUpdate
+
+build _deps/sol2-build/ContinuousUpdate: phony _deps/sol2-build/CMakeFiles/ContinuousUpdate
+
+
+#############################################
+# Utility command for ContinuousConfigure
+
+build _deps/sol2-build/ContinuousConfigure: phony _deps/sol2-build/CMakeFiles/ContinuousConfigure
+
+
+#############################################
+# Utility command for ContinuousBuild
+
+build _deps/sol2-build/ContinuousBuild: phony _deps/sol2-build/CMakeFiles/ContinuousBuild
+
+
+#############################################
+# Utility command for ContinuousTest
+
+build _deps/sol2-build/ContinuousTest: phony _deps/sol2-build/CMakeFiles/ContinuousTest
+
+
+#############################################
+# Utility command for ContinuousCoverage
+
+build _deps/sol2-build/ContinuousCoverage: phony _deps/sol2-build/CMakeFiles/ContinuousCoverage
+
+
+#############################################
+# Utility command for ContinuousMemCheck
+
+build _deps/sol2-build/ContinuousMemCheck: phony _deps/sol2-build/CMakeFiles/ContinuousMemCheck
+
+
+#############################################
+# Utility command for ContinuousSubmit
+
+build _deps/sol2-build/ContinuousSubmit: phony _deps/sol2-build/CMakeFiles/ContinuousSubmit
+
+
+#############################################
+# Utility command for package
+
+build _deps/sol2-build/CMakeFiles/package.util: CUSTOM_COMMAND _deps/sol2-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/sol2-build/package: phony _deps/sol2-build/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/sol2-build/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackSourceConfig.cmake /Users/aidanjost/projects/solray/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/sol2-build/package_source: phony _deps/sol2-build/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/sol2-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/sol2-build/edit_cache: phony _deps/sol2-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/sol2-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/aidanjost/projects/solray -B/Users/aidanjost/projects/solray/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/sol2-build/rebuild_cache: phony _deps/sol2-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/sol2-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/sol2-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/sol2-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/sol2-build/install: phony _deps/sol2-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/sol2-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/sol2-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/sol2-build/install/local: phony _deps/sol2-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/sol2-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/sol2-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/sol2-build/install/strip: phony _deps/sol2-build/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/Experimental
+
+build _deps/sol2-build/CMakeFiles/Experimental | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/Experimental: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D Experimental
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/Nightly
+
+build _deps/sol2-build/CMakeFiles/Nightly | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/Nightly: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D Nightly
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/Continuous
+
+build _deps/sol2-build/CMakeFiles/Continuous | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/Continuous: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D Continuous
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyMemoryCheck
+
+build _deps/sol2-build/CMakeFiles/NightlyMemoryCheck | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyMemoryCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyMemoryCheck
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyStart
+
+build _deps/sol2-build/CMakeFiles/NightlyStart | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyStart: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyStart
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyUpdate
+
+build _deps/sol2-build/CMakeFiles/NightlyUpdate | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyUpdate: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyUpdate
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyConfigure
+
+build _deps/sol2-build/CMakeFiles/NightlyConfigure | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyConfigure: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyConfigure
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyBuild
+
+build _deps/sol2-build/CMakeFiles/NightlyBuild | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyBuild: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyBuild
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyTest
+
+build _deps/sol2-build/CMakeFiles/NightlyTest | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyTest: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyTest
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyCoverage
+
+build _deps/sol2-build/CMakeFiles/NightlyCoverage | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyCoverage: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyCoverage
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlyMemCheck
+
+build _deps/sol2-build/CMakeFiles/NightlyMemCheck | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlyMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlyMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/NightlySubmit
+
+build _deps/sol2-build/CMakeFiles/NightlySubmit | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/NightlySubmit: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D NightlySubmit
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalStart
+
+build _deps/sol2-build/CMakeFiles/ExperimentalStart | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalStart: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalStart
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalUpdate
+
+build _deps/sol2-build/CMakeFiles/ExperimentalUpdate | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalUpdate: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalUpdate
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalConfigure
+
+build _deps/sol2-build/CMakeFiles/ExperimentalConfigure | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalConfigure: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalConfigure
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalBuild
+
+build _deps/sol2-build/CMakeFiles/ExperimentalBuild | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalBuild: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalBuild
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalTest
+
+build _deps/sol2-build/CMakeFiles/ExperimentalTest | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalTest: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalTest
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalCoverage
+
+build _deps/sol2-build/CMakeFiles/ExperimentalCoverage | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalCoverage: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalCoverage
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalMemCheck
+
+build _deps/sol2-build/CMakeFiles/ExperimentalMemCheck | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ExperimentalSubmit
+
+build _deps/sol2-build/CMakeFiles/ExperimentalSubmit | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ExperimentalSubmit: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ExperimentalSubmit
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousStart
+
+build _deps/sol2-build/CMakeFiles/ContinuousStart | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousStart: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousStart
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousUpdate
+
+build _deps/sol2-build/CMakeFiles/ContinuousUpdate | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousUpdate: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousUpdate
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousConfigure
+
+build _deps/sol2-build/CMakeFiles/ContinuousConfigure | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousConfigure: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousConfigure
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousBuild
+
+build _deps/sol2-build/CMakeFiles/ContinuousBuild | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousBuild: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousBuild
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousTest
+
+build _deps/sol2-build/CMakeFiles/ContinuousTest | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousTest: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousTest
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousCoverage
+
+build _deps/sol2-build/CMakeFiles/ContinuousCoverage | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousCoverage: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousCoverage
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousMemCheck
+
+build _deps/sol2-build/CMakeFiles/ContinuousMemCheck | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousMemCheck: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousMemCheck
+  pool = console
+
+
+#############################################
+# Custom command for _deps/sol2-build/CMakeFiles/ContinuousSubmit
+
+build _deps/sol2-build/CMakeFiles/ContinuousSubmit | ${cmake_ninja_workdir}_deps/sol2-build/CMakeFiles/ContinuousSubmit: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest -D ContinuousSubmit
+  pool = console
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/aidanjost/projects/solray/cmake/fetch_raylib.cmake
+# =============================================================================
+
+
+#############################################
+# Utility command for uninstall
+
+build _deps/raylib-build/uninstall: phony _deps/raylib-build/CMakeFiles/uninstall
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/package: phony _deps/raylib-build/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackSourceConfig.cmake /Users/aidanjost/projects/solray/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/package_source: phony _deps/raylib-build/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/edit_cache: phony _deps/raylib-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/aidanjost/projects/solray -B/Users/aidanjost/projects/solray/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/rebuild_cache: phony _deps/raylib-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/install: phony _deps/raylib-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/install/local: phony _deps/raylib-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/install/strip: phony _deps/raylib-build/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for _deps/raylib-build/CMakeFiles/uninstall
+
+build _deps/raylib-build/CMakeFiles/uninstall | ${cmake_ninja_workdir}_deps/raylib-build/CMakeFiles/uninstall: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/cmake_uninstall.cmake
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target raylib
+
+
+#############################################
+# Order-only phony target for raylib
+
+build cmake_object_order_depends_target_raylib: phony || cmake_object_order_depends_target_glfw
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o: C_COMPILER__raylib_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/raudio.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -F/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o: C_COMPILER__raylib_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/rcore.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -F/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.o: C_COMPILER__raylib_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/rmodels.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -F/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.o: C_COMPILER__raylib_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/rshapes.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -F/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.o: C_COMPILER__raylib_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/rtext.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -F/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.o: C_COMPILER__raylib_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/rtextures.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -F/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.o: C_COMPILER__raylib_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/utils.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src -F/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -isystem /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target raylib
+
+
+#############################################
+# Link the static library _deps/raylib-build/raylib/libraylib.a
+
+build _deps/raylib-build/raylib/libraylib.a: C_STATIC_LIBRARY_LINKER__raylib_Debug _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.o || _deps/raylib-build/raylib/external/glfw/src/glfw
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
+  LANGUAGE_COMPILE_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = _deps/raylib-build/raylib/libraylib.a
+  TARGET_PDB = raylib.a.dbg
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/raylib/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/package: phony _deps/raylib-build/raylib/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/raylib/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackSourceConfig.cmake /Users/aidanjost/projects/solray/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/package_source: phony _deps/raylib-build/raylib/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/raylib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/raylib/edit_cache: phony _deps/raylib-build/raylib/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/raylib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/aidanjost/projects/solray -B/Users/aidanjost/projects/solray/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/rebuild_cache: phony _deps/raylib-build/raylib/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/raylib/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/raylib/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/install: phony _deps/raylib-build/raylib/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/raylib/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/install/local: phony _deps/raylib-build/raylib/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/raylib/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/install/strip: phony _deps/raylib-build/raylib/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/cmake/GlfwImport.cmake
+# =============================================================================
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/package: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackSourceConfig.cmake /Users/aidanjost/projects/solray/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/package_source: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/edit_cache: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/aidanjost/projects/solray -B/Users/aidanjost/projects/solray/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/rebuild_cache: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/raylib/external/glfw/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/install: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/install/local: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/install/strip: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for OBJECT_LIBRARY target glfw
+
+
+#############################################
+# Order-only phony target for glfw
+
+build cmake_object_order_depends_target_glfw: phony || .
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/input.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/platform.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/null_init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/null_monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/null_window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/null_joystick.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_time.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/posix_module.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/posix_thread.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_init.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_window.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_unscanned_Debug /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/nsgl_context.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_COCOA
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith -I/opt/homebrew/opt/llvm/include -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fPIC -fcolor-diagnostics -Wall
+  INCLUDES = -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+
+
+#############################################
+# Object library glfw
+
+build _deps/raylib-build/raylib/external/glfw/src/glfw: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o
+
+
+#############################################
+# Utility command for update_mappings
+
+build _deps/raylib-build/raylib/external/glfw/src/update_mappings: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/package: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackSourceConfig.cmake /Users/aidanjost/projects/solray/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/package_source: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/edit_cache: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/aidanjost/projects/solray -B/Users/aidanjost/projects/solray/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/rebuild_cache: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/raylib/external/glfw/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/install: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/install/local: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/install/strip: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/src && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-src/src/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+  DESC = Updating gamepad mappings from upstream repository
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/aidanjost/projects/solray/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for package
+
+build examples/CMakeFiles/package.util: CUSTOM_COMMAND examples/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build examples/package: phony examples/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build examples/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cpack --config ./CPackSourceConfig.cmake /Users/aidanjost/projects/solray/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build examples/package_source: phony examples/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build examples/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/examples && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build examples/edit_cache: phony examples/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build examples/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/examples && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/aidanjost/projects/solray -B/Users/aidanjost/projects/solray/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build examples/rebuild_cache: phony examples/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build examples/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build examples/CMakeFiles/install.util: CUSTOM_COMMAND examples/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/examples && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build examples/install: phony examples/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build examples/CMakeFiles/install/local.util: CUSTOM_COMMAND examples/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/examples && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build examples/install/local: phony examples/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build examples/CMakeFiles/install/strip.util: CUSTOM_COMMAND examples/all
+  COMMAND = cd /Users/aidanjost/projects/solray/cmake-build-debug/examples && /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build examples/install/strip: phony examples/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
 
+build Continuous: phony _deps/sol2-build/Continuous
+
+build ContinuousBuild: phony _deps/sol2-build/ContinuousBuild
+
+build ContinuousConfigure: phony _deps/sol2-build/ContinuousConfigure
+
+build ContinuousCoverage: phony _deps/sol2-build/ContinuousCoverage
+
+build ContinuousMemCheck: phony _deps/sol2-build/ContinuousMemCheck
+
+build ContinuousStart: phony _deps/sol2-build/ContinuousStart
+
+build ContinuousSubmit: phony _deps/sol2-build/ContinuousSubmit
+
+build ContinuousTest: phony _deps/sol2-build/ContinuousTest
+
+build ContinuousUpdate: phony _deps/sol2-build/ContinuousUpdate
+
+build Experimental: phony _deps/sol2-build/Experimental
+
+build ExperimentalBuild: phony _deps/sol2-build/ExperimentalBuild
+
+build ExperimentalConfigure: phony _deps/sol2-build/ExperimentalConfigure
+
+build ExperimentalCoverage: phony _deps/sol2-build/ExperimentalCoverage
+
+build ExperimentalMemCheck: phony _deps/sol2-build/ExperimentalMemCheck
+
+build ExperimentalStart: phony _deps/sol2-build/ExperimentalStart
+
+build ExperimentalSubmit: phony _deps/sol2-build/ExperimentalSubmit
+
+build ExperimentalTest: phony _deps/sol2-build/ExperimentalTest
+
+build ExperimentalUpdate: phony _deps/sol2-build/ExperimentalUpdate
+
+build Nightly: phony _deps/sol2-build/Nightly
+
+build NightlyBuild: phony _deps/sol2-build/NightlyBuild
+
+build NightlyConfigure: phony _deps/sol2-build/NightlyConfigure
+
+build NightlyCoverage: phony _deps/sol2-build/NightlyCoverage
+
+build NightlyMemCheck: phony _deps/sol2-build/NightlyMemCheck
+
+build NightlyMemoryCheck: phony _deps/sol2-build/NightlyMemoryCheck
+
+build NightlyStart: phony _deps/sol2-build/NightlyStart
+
+build NightlySubmit: phony _deps/sol2-build/NightlySubmit
+
+build NightlyTest: phony _deps/sol2-build/NightlyTest
+
+build NightlyUpdate: phony _deps/sol2-build/NightlyUpdate
+
+build glfw: phony _deps/raylib-build/raylib/external/glfw/src/glfw
+
+build libraylib.a: phony _deps/raylib-build/raylib/libraylib.a
+
+build raylib: phony _deps/raylib-build/raylib/libraylib.a
+
 build solray: phony libsolray.dylib
+
+build uninstall: phony _deps/raylib-build/uninstall
+
+build update_mappings: phony _deps/raylib-build/raylib/external/glfw/src/update_mappings
 
 # =============================================================================
 # Folder targets.
@@ -125,23 +1528,79 @@ build solray: phony libsolray.dylib
 #############################################
 # Folder: /Users/aidanjost/projects/solray/cmake-build-debug
 
-build all: phony libsolray.dylib
+build all: phony libsolray.dylib _deps/sol2-build/all _deps/raylib-build/all examples/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build
+
+build _deps/raylib-build/all: phony _deps/raylib-build/raylib/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib
+
+build _deps/raylib-build/raylib/all: phony _deps/raylib-build/raylib/libraylib.a _deps/raylib-build/raylib/external/glfw/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw
+
+build _deps/raylib-build/raylib/external/glfw/all: phony _deps/raylib-build/raylib/external/glfw/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/aidanjost/projects/solray/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+
+build _deps/raylib-build/raylib/external/glfw/src/all: phony _deps/raylib-build/raylib/external/glfw/src/glfw
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/aidanjost/projects/solray/cmake-build-debug/_deps/sol2-build
+
+build _deps/sol2-build/all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/aidanjost/projects/solray/cmake-build-debug/examples
+
+build examples/all: phony
 
 # =============================================================================
 # Built-in targets
 
 
 #############################################
+# Phony target to force glob verification run.
+
+build /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake_force: phony
+
+
+#############################################
+# Re-run CMake to check if globbed directories changed.
+
+build /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/cmake.verify_globs: VERIFY_GLOBS | /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake_force
+  pool = console
+  restat = 1
+
+
+#############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/aidanjost/projects/solray/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/cmake.verify_globs | /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDependentOption.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePrintHelpers.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CPack.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CPackComponent.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CTest.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CTestTargets.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CTestUseLaunchers.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIPOSupported.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/DartConfiguration.tcl.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/PatchInfo.txt.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/RepositoryInfo.txt.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/UpdateInfo.txt.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/download.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/extractfile.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/gitclone.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/gitupdate.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/shared_internal_commands.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/stepscript.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FeatureSummary.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FetchContent.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindGit.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Templates/CPackConfig.cmake.in /Users/aidanjost/projects/solray/CMakeLists.txt /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake /Users/aidanjost/projects/solray/cmake/fetch_raylib.cmake /Users/aidanjost/projects/solray/cmake/fetch_sol.cmake /Users/aidanjost/projects/solray/examples/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/Uninstall.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/src/CMakeLists.txt _deps/sol2-src/CMakeLists.txt _deps/sol2-src/cmake/Includes/Project.cmake _deps/sol2-src/cmake/Modules/CheckCompilerDiagnostic.cmake _deps/sol2-src/cmake/Modules/CheckCompilerFlag.cmake _deps/sol2-src/cmake/Modules/FindVersion.cmake _deps/sol2-src/cmake/sol2-config.cmake.in _deps/sol2-src/sol2.pc.in
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/aidanjost/projects/solray/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
+build /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDependentOption.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePrintHelpers.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CPack.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CPackComponent.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CTest.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CTestTargets.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CTestUseLaunchers.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIPOSupported.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/DartConfiguration.tcl.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/PatchInfo.txt.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/RepositoryInfo.txt.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/UpdateInfo.txt.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/download.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/extractfile.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/gitclone.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/gitupdate.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/shared_internal_commands.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/ExternalProject/stepscript.cmake.in /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FeatureSummary.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FetchContent.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindGit.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake /Users/aidanjost/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Templates/CPackConfig.cmake.in /Users/aidanjost/projects/solray/CMakeLists.txt /Users/aidanjost/projects/solray/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake /Users/aidanjost/projects/solray/cmake/fetch_raylib.cmake /Users/aidanjost/projects/solray/cmake/fetch_sol.cmake /Users/aidanjost/projects/solray/examples/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/Uninstall.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/src/CMakeLists.txt _deps/sol2-src/CMakeLists.txt _deps/sol2-src/cmake/Includes/Project.cmake _deps/sol2-src/cmake/Modules/CheckCompilerDiagnostic.cmake _deps/sol2-src/cmake/Modules/CheckCompilerFlag.cmake _deps/sol2-src/cmake/Modules/FindVersion.cmake _deps/sol2-src/cmake/sol2-config.cmake.in _deps/sol2-src/sol2.pc.in: phony
 
 
 #############################################
