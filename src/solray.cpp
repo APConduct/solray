@@ -1,55 +1,129 @@
-//
-// Created by Aidan Jost on 3/21/25.
-//
-#include <sol/sol.hpp>
-#include <raylib.h>
 
-namespace solray
-{
-    extern "C"
-    {
-        __attribute__((visibility("default"))) int luaopen_solray(lua_State* L)
-        {
+#include <raylib.h>
+#include <sol/sol.hpp>
+
+namespace solray {
+    extern "C" {
+        __attribute__((visibility("default"))) int luaopen_solray(lua_State *L) {
             sol::state lua(L);
             sol::table raylib = lua.create_table();
 
-            raylib.new_usertype<Color>("Color",
-                sol::constructors<Color()>(),
+            raylib.new_usertype<Color>(
+                "Color", sol::constructors<Color()>(),
                 sol::constructors<Color(unsigned char, unsigned char, unsigned char)>(),
-                "r", &Color::r,
-                "g", &Color::g,
-                "b", &Color::b,
-                "a", &Color::a
-                );
+                "r", &Color::r, "g", &Color::g, "b", &Color::b, "a", &Color::a);
 
-            raylib.new_usertype<Vector2>("Vector2",
-                sol::constructors<Vector2()>(),
-                sol::constructors<Vector2(float, float)>(),
-                "x", &Vector2::x,
-                "y", &Vector2::y);
+            raylib.new_usertype<Vector2>("Vector2", sol::constructors<Vector2()>(),
+                                         sol::constructors<Vector2(float, float)>(),
+                                         "x", &Vector2::x, "y", &Vector2::y);
 
-            raylib.new_usertype<Vector3>("Vector3",
-                sol::constructors<Vector3()>(),
-                sol::constructors<Vector3(float, float, float)>(),
-                "x", &Vector3::x,
-                "y", &Vector3::y,
-                "z", &Vector3::z);
+            raylib.new_usertype<Vector3>(
+                "Vector3", sol::constructors<Vector3()>(),
+                sol::constructors<Vector3(float, float, float)>(), "x", &Vector3::x,
+                "y", &Vector3::y, "z", &Vector3::z);
 
-            raylib.new_usertype<Vector4>("Vector4",
-                sol::constructors<Vector4()>(),
-                sol::constructors<Vector4(float, float, float, float)>(),
-                "x", &Vector4::x,
-                "y", &Vector4::y,
-                "z", &Vector4::z,
-                "w", &Vector4::w);
+            raylib.new_usertype<Vector4>(
+                "Vector4", sol::constructors<Vector4()>(),
+                sol::constructors<Vector4(float, float, float, float)>(), "x",
+                &Vector4::x, "y", &Vector4::y, "z", &Vector4::z, "w", &Vector4::w);
 
-            raylib.new_usertype<Texture>("Texture",
-                sol::constructors<Texture()>(),
-                "id", &Texture::id,
-                "width", &Texture::width,
-                "height", &Texture::height,
-                "mipmaps", &Texture::mipmaps,
-                "format", &Texture::format);
+            raylib.new_usertype<Texture>("Texture", sol::constructors<Texture()>(),
+                                         "id", &Texture::id, "width", &Texture::width,
+                                         "height", &Texture::height, "mipmaps",
+                                         &Texture::mipmaps, "format", &Texture::format);
+
+            raylib.new_usertype<Matrix>(
+                "Matrix", sol::constructors<Matrix()>(),
+                sol::constructors<Matrix(float, float, float, float, float, float,
+                                         float, float, float, float, float, float,
+                                         float, float, float, float)>(),
+                "m0", &Matrix::m0, "m1", &Matrix::m1, "m2", &Matrix::m2, "m3",
+                &Matrix::m3, "m4", &Matrix::m4, "m5", &Matrix::m5, "m6", &Matrix::m6,
+                "m7", &Matrix::m7, "m8", &Matrix::m8, "m9", &Matrix::m9, "m10",
+                &Matrix::m10, "m11", &Matrix::m11, "m12", &Matrix::m12, "m13",
+                &Matrix::m13, "m14", &Matrix::m14, "m15", &Matrix::m15);
+
+            raylib.new_usertype<Texture2D>(
+                "Texture2D", sol::constructors<Texture2D()>(), "id", &Texture2D::id,
+                "width", &Texture2D::width, "height", &Texture2D::height, "mipmaps",
+                &Texture2D::mipmaps, "format", &Texture2D::format);
+
+            raylib.new_usertype<Rectangle>(
+                "Rectangle", sol::constructors<Rectangle()>(),
+                sol::constructors<Rectangle(float, float, float, float)>(), "x",
+                &Rectangle::x, "y", &Rectangle::y, "width", &Rectangle::width, "height",
+                &Rectangle::height);
+
+            raylib.new_usertype<Image>("Image", sol::constructors<Image()>(),
+                                       sol::constructors<Image(int, int, int, int)>(),
+                                       "data", &Image::data, "width", &Image::width,
+                                       "height", &Image::height, "mipmaps",
+                                       &Image::mipmaps, "format", &Image::format);
+
+            raylib.new_usertype<RenderTexture>(
+                "RenderTexture", sol::constructors<RenderTexture()>(), "id",
+                &RenderTexture::id, "texture", &RenderTexture::texture, "depth",
+                &RenderTexture::depth);
+
+            raylib.new_usertype<NPatchInfo>(
+                "NPatchInfo", sol::constructors<NPatchInfo()>(),
+                sol::constructors<NPatchInfo(Rectangle, int, int, int, int)>(),
+                "source", &NPatchInfo::source, "left", &NPatchInfo::left, "top",
+                &NPatchInfo::top, "right", &NPatchInfo::right, "bottom",
+                &NPatchInfo::bottom, "layout", &NPatchInfo::layout);
+
+            raylib.new_usertype<GlyphInfo>(
+                "GlyphInfo", sol::constructors<GlyphInfo()>(),
+                sol::constructors<GlyphInfo(int, int, int, int, int, int)>(), "value",
+                &GlyphInfo::value, "offset_x", &GlyphInfo::offsetX, "offset_y",
+                &GlyphInfo::offsetY, "advance_x", &GlyphInfo::advanceX, "image",
+                &GlyphInfo::image);
+
+            raylib.new_usertype<Font>("Font", sol::constructors<Font()>(),
+                                      sol::constructors<Font(int, int, int, int)>(),
+                                      "base_size", &Font::baseSize, "glyph_count",
+                                      &Font::glyphCount, "glyphs", &Font::glyphs,
+                                      "texture", &Font::texture, "recs", &Font::recs);
+
+            raylib.new_usertype<Camera2D>(
+                "Camera2D", sol::constructors<Camera2D()>(),
+                sol::constructors<Camera2D(Vector2, Vector2, float, int)>(), "offset",
+                &Camera2D::offset, "target", &Camera2D::target, "rotation",
+                &Camera2D::rotation, "zoom", &Camera2D::zoom);
+
+            raylib.new_usertype<Camera3D>(
+                "Camera3D", sol::constructors<Camera3D()>(),
+                sol::constructors<Camera3D(Vector3, Vector3, Vector3, float, int)>(),
+                "position", &Camera3D::position, "target", &Camera3D::target, "up",
+                &Camera3D::up, "fovy", &Camera3D::fovy);
+
+            raylib.new_usertype<Shader>("Shader", sol::constructors<Shader()>(),
+                                        sol::constructors<Shader(int, int)>(), "id",
+                                        &Shader::id, "locs", &Shader::locs);
+
+            raylib.new_usertype<MaterialMap>(
+                "MaterialMap", sol::constructors<MaterialMap()>(),
+                sol::constructors<MaterialMap(int, int)>(), "texture",
+                &MaterialMap::texture, "color", &MaterialMap::color, "value",
+                &MaterialMap::value);
+
+            raylib.new_usertype<Material>(
+                "Material", sol::constructors<Material()>(),
+                sol::constructors<Material(Shader, MaterialMap)>(), "shader",
+                &Material::shader, "maps", &Material::maps, "params",
+                &Material::params);
+
+            raylib.new_usertype<Camera2D>(
+                "Mesh", sol::constructors<Camera2D()>(),
+                sol::constructors<Camera2D(Vector3, Vector3, Vector3, float, int)>(),
+                "vboId", &Mesh::vboId, "vaoId", &Mesh::vaoId, "vertexCount",
+                &Mesh::vertexCount);
+
+            raylib.new_usertype<Model>("Model", sol::constructors<Model()>(),
+                                       sol::constructors<Model(Mesh, Material)>(),
+                                       "transform", &Model::transform, "meshCount",
+                                       &Model::meshCount, "meshes", &Model::meshes,
+                                       "materials", &Model::materials);
 
             raylib["init_window"] = &InitWindow;
             raylib["close_window"] = &CloseWindow;
@@ -151,7 +225,6 @@ namespace solray
             raylib["get_fps"] = &GetFPS;
             raylib["get_frame_time"] = &GetFrameTime;
             raylib["get_time"] = &GetTime;
-
 
             raylib["swap_screen_buffer"] = &SwapScreenBuffer;
             raylib["poll_input_events"] = &PollInputEvents;
@@ -280,8 +353,6 @@ namespace solray
             raylib["update_camera"] = &UpdateCamera;
             raylib["update_camera_pro"] = &UpdateCameraPro;
 
-
-
             raylib["set_shapes_texture"] = &SetShapesTexture;
             raylib["get_shapes_texture"] = &GetShapesTexture;
             raylib["get_shapes_texture_rectangle"] = &GetShapesTextureRectangle;
@@ -299,12 +370,7 @@ namespace solray
             raylib["draw_circle_gradient"] = &DrawCircleGradient;
             raylib["draw_circle_v"] = &DrawCircleV;
 
-
-
-
             return raylib.push();
-
-
         }
     }
-}
+} // namespace solray
